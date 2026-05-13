@@ -1,1 +1,2 @@
-ajout fichier google
+robots.txt
+sitemap.xml
