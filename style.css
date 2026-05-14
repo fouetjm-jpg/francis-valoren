@@ -1,59 +1,480 @@
+/* ========================= */
+/* 🌍 BASE */
+/* ========================= */
+
 body {
     margin: 0;
-    padding-top: 70px;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
-}
 
-/* Header / titre */
-h1 {
-    margin-top: 30px;
-    font-size: 2.2em;
-    color: #111;
-}
+    background-color: #ece2c6;
 
-/* Sous-titres */
-h2 {
     color: #333;
-    margin-top: 30px;
 }
 
-/* MENU MODERNE */
-nav {
+/* ========================= */
+/* HEADER FIXE */
+/* ========================= */
+
+header {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    background: #1f2937;
-    padding: 15px;
-    text-align: center;
+
+    background: rgba(255,248,230,0.95);
+
+    padding: 6px 20px;
+
     z-index: 1000;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+/* ========================= */
+/* NAVIGATION */
+/* ========================= */
+
+nav {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
 }
 
 nav a {
-    color: white;
+    color: #5b3923;
+
     text-decoration: none;
-    margin: 0 10px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: 0.3s;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    transition: 0.3s ease;
+
+    font-weight: bold;
+
+    background: rgba(255,255,255,0.4);
 }
 
 nav a:hover {
-    background: #3b82f6;
+    background: #7b4f2c;
+
+    color: #fff8e7;
 }
 
-/* IMAGE MODERNE */
-img {
-    width: 300px;
-    margin-top: 20px;
-    border-radius: 5px;}
+/* ========================= */
+/* CONTENU */
+/* ========================= */
 
+main {
+    padding-top: 140px;
+}
 
-/* PARAGRAPHES */
+h1 {
+    color: #4b2c18;
+
+    margin: 0;
+
+    font-family: "Georgia", serif;
+}
+
 p {
     font-size: 1.1em;
+
     line-height: 1.6;
-    margin: 15px;
+
+    color: #4b2c18;
+}
+
+/* ========================= */
+/* 📖 LIVRE ULTRA RÉALISTE */
+/* ========================= */
+
+.book-container {
+    position: relative;
+
+    width: fit-content;
+
+    margin: 80px auto;
+}
+
+/* tranche du livre */
+.book-container::before {
+    content: "";
+
+    position: absolute;
+
+    left: -26px;
+    top: 18px;
+
+    width: 42px;
+    height: 340px;
+
+    background:
+        linear-gradient(
+            to right,
+            #120905,
+            #3b2214,
+            #6a4127,
+            #2b160d,
+            #120905
+        );
+
+    border-radius: 8px;
+
+    transform: skewY(-6deg);
+
+    box-shadow:
+        inset 0 0 15px rgba(255,255,255,0.05),
+        0 18px 35px rgba(0,0,0,0.45);
+
+    z-index: -2;
+}
+
+/* livre */
+.book {
+    position: relative;
+
+    width: 560px;
+    height: 340px;
+
+    display: flex;
+
+    perspective: 3000px;
+
+    transform-style: preserve-3d;
+
+    transform:
+        rotateX(10deg)
+        rotateY(-14deg);
+}
+
+/* pages */
+.book-left,
+.book-right {
+    position: relative;
+
+    width: 50%;
+    height: 100%;
+
+    overflow: hidden;
+
+    border: 1px solid #b8945e;
+
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,0.18), transparent 40%),
+        linear-gradient(to bottom, #f5e6bd, #d2b57c);
+
+    box-shadow:
+        inset 0 0 90px rgba(120,70,20,0.22),
+        inset 0 -15px 25px rgba(0,0,0,0.08),
+        0 25px 45px rgba(0,0,0,0.35);
+}
+
+/* page gauche */
+.book-left {
+    border-radius: 12px 0 0 12px;
+
+    transform-origin: right;
+}
+
+/* page droite animée */
+.book-right {
+    border-radius: 0 12px 12px 0;
+
+    transform-origin: left;
+
+    animation: openBook 10s infinite ease-in-out;
+}
+
+/* texture papier */
+.book-left::before,
+.book-right::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(120,90,50,0.03) 0px,
+            rgba(120,90,50,0.03) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+
+    opacity: 0.5;
+
+    pointer-events: none;
+}
+
+/* bord des pages */
+.book-left::after,
+.book-right::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    width: 18px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(255,255,255,0.4),
+            rgba(0,0,0,0.08)
+        );
+}
+
+.book-left::after {
+    right: 0;
+}
+
+.book-right::after {
+    left: 0;
+}
+
+/* couture centrale */
+.book::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -6px;
+
+    transform: translateX(-50%);
+
+    width: 18px;
+    height: 352px;
+
+    background:
+        linear-gradient(
+            to right,
+            #1a0d07,
+            #4b2c18,
+            #1a0d07
+        );
+
+    border-radius: 6px;
+
+    z-index: 20;
+
+    box-shadow:
+        inset 0 0 12px rgba(255,255,255,0.08),
+        0 0 15px rgba(0,0,0,0.35);
+}
+
+/* contenu intérieur */
+.page-content {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-family: "Georgia", serif;
+
+    font-size: 2.8em;
+
+    color: #4b2c18;
+
+    z-index: 5;
+}
+
+/* ombre centrale */
+.page-content::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 80px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0,0,0,0.18),
+            transparent 70%
+        );
+
+    z-index: -1;
+}
+
+.book-left .page-content::before {
+    right: -40px;
+}
+
+.book-right .page-content::before {
+    left: -40px;
+}
+
+/* animation du livre */
+@keyframes openBook {
+
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    20% {
+        transform: rotateY(-25deg);
+    }
+
+    45% {
+        transform: rotateY(-165deg);
+    }
+
+    65% {
+        transform: rotateY(-165deg);
+    }
+
+    85% {
+        transform: rotateY(-25deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+/* ========================= */
+/* ✒️ PLUME */
+/* ========================= */
+
+.quill {
+    position: absolute;
+
+    right: -45px;
+    top: 70px;
+
+    width: 16px;
+    height: 210px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f5f0e6,
+            #d8c7a0
+        );
+
+    border-radius: 50% 50% 40% 40%;
+
+    transform: rotate(18deg);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.25);
+}
+
+/* pointe */
+.quill::before {
+    content: "";
+
+    position: absolute;
+
+    bottom: -18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 12px;
+    height: 25px;
+
+    background: #5b3923;
+
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+/* rainure plume */
+.quill::after {
+    content: "";
+
+    position: absolute;
+
+    top: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 2px;
+    height: 180px;
+
+    background: rgba(90,50,20,0.25);
+}
+
+/* ========================= */
+/* 📬 CONTACT */
+/* ========================= */
+
+.contact-links {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 160px;
+}
+
+.contact-button {
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7b4f2c,
+            #5b3923
+        );
+
+    color: #fff8e7;
+
+    text-decoration: none;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    font-size: 1.1em;
+
+    font-weight: bold;
+
+    width: 280px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.25);
+
+    transition: 0.3s ease;
+}
+
+.contact-button:hover {
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    background:
+        linear-gradient(
+            145deg,
+            #8b5a33,
+            #6a3f25
+        );
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.35);
 }
