@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Œuvres – Francis Valoren</title>
 
     <meta name="description" content="Site officiel de Francis Valoren, auteur.">
 
@@ -18,7 +20,7 @@
     <!-- FOND -->
     <div class="background-overlay"></div>
 
-    <!-- HEADER (corrigé, un seul, propre) -->
+    <!-- HEADER -->
 <header>
     <div class="logo">Francis Valoren <span>Auteur</span></div>
 
@@ -29,54 +31,55 @@
     </nav>
 </header>
 
-
-
     <!-- HERO -->
     <section class="hero">
 
         <!-- TEXTE -->
         <div class="hero-text">
 
-    
+            <h1>Francis<br>Valoren</h1>
+
+            <div class="line"></div>
+
+            <h2>Auteur.</h2>
 
             <p>
                 « Auto‑édité par choix, libre par nécessité et j’écris pour celles et ceux qui refusent d’abandonner leurs rêves. »
             </p>
 
-            <a href="oeuvres.html" class="btn">
-                Découvrir mes œuvres
-            </a>
+          <a href="oeuvres.html" class="btn">
+            Découvrir mes œuvres
+          </a>
 
         </div>
 
-        <!-- LIVRE -->
+        <!-- LIVRE ANIMÉ -->
         <div class="book-scene">
+            <div class="book-container">
+                <div class="book">
 
-            <div class="book">
+                    <div class="page" data-title="Les Effaceurs – Tome 1"></div>
+                    <div class="page" data-title="Les Effaceurs – Tome 2"></div>
+                    <div class="page" data-title="Les Oubliés de la Terre"></div>
+                    <div class="page" data-title="Le Dernier Souffle"></div>
 
-                <div class="cover">
-                    <div class="book-title">
-                        LE JARDIN<br>
-                        DU PREMIER<br>
-                        SOUFFLE
-                    </div>
-
-                    <div class="author">
-                        Francis Valoren
-                    </div>
                 </div>
-
-                <!-- Pages -->
-                <div class="page p1"></div>
-                <div class="page p2"></div>
-                <div class="page p3"></div>
-                <div class="page p4"></div>
-
             </div>
-
         </div>
 
     </section>
+
+    <!-- SCRIPT ANIMATION DES PAGES -->
+    <script>
+    const pages = document.querySelectorAll('.page');
+
+    pages.forEach((page, index) => {
+        setTimeout(() => {
+            page.style.transform = "rotateY(-180deg)";
+            page.innerHTML = `<div>${page.dataset.title}</div>`;
+        }, index * 2000);
+    });
+    </script>
 
 </body>
 
