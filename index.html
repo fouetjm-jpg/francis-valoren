@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -6,75 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ✅ GOOGLE SEARCH CONSOLE -->
-    <meta name="google-site-verification" content="k2FKRahYjNImQ5lQJP2p_5pGIiKi0Y_m2c5vUr0aI8g" />
-    ```html id="8jlwmx"
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Site officiel de Francis Valoren, auteur et créateur d’œuvres littéraires." />
-
     <title>Francis Valoren</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-```
-
-    <title>Francis Valoren</title>
+    <meta name="description"
+        content="Site officiel de Francis Valoren, auteur et créateur d’œuvres littéraires.">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Police élégante -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
+    <!-- FOND -->
+    <div class="background-overlay"></div>
+
     <!-- HEADER -->
     <header>
 
-        <h1>Accueil</h1>
+        <div class="logo">
+            FV <span>FRANCIS VALOREN</span>
+        </div>
 
         <nav>
             <a href="index.html">Accueil</a>
+            <a href="biographie.html">À propos</a>
+            <a href="photo.html">Œuvres</a>
             <a href="contact.html">Contact</a>
-            <a href="photo.html">Le Jardin du Premier Souffle</a>
-            <a href="photo2.html">Liberté, Égalité, Fraternité</a>
-            <a href="photo3.html">Le Chant de la Terre</a>
-            <a href="biographie.html">Biographie</a>
         </nav>
 
     </header>
 
-    <!-- CONTENU -->
-    <main>
+    <!-- HERO -->
+    <section class="hero">
 
-        <p>J'espère que vous apprécierez mon site !</p>
+        <!-- TEXTE -->
+        <div class="hero-text">
 
-        <!-- 📖 LIVRE -->
-        <div class="book-container">
+            <h1>Francis<br>Valoren</h1>
 
-            <div class="book">
+            <div class="line"></div>
 
-                <div class="book-left">
-                    <div class="page-content">
+            <h2>Auteur. Poète. Créateur.</h2>
 
-                    </div>
-                </div>
+            <p>
+                Des mots pour explorer l’âme humaine,
+                célébrer la nature et chercher la vérité.
+            </p>
 
-                <div class="book-right">
-                    <div class="page-content">
-
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- ✒️ PLUME -->
-            <div class="quill"></div>
+            <a href="photo.html" class="btn">
+                Découvrir mes œuvres
+            </a>
 
         </div>
 
-    </main>
+        <!-- LIVRE -->
+        <div class="book-scene">
+
+            <div class="book">
+
+                <div class="cover">
+                    <div class="book-title">
+                        LE JARDIN<br>
+                        DU PREMIER<br>
+                        SOUFFLE
+                    </div>
+
+                    <div class="author">
+                        Francis Valoren
+                    </div>
+                </div>
+
+                <!-- Pages -->
+                <div class="page p1"></div>
+                <div class="page p2"></div>
+                <div class="page p3"></div>
+                <div class="page p4"></div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </body>
+
 </html>
-```
