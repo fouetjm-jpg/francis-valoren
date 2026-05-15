@@ -184,9 +184,9 @@ nav a:hover {
 
 .book {
     position: relative;
+    width: 280px;   /* avant : 380px */
+    height: 400px;  /* avant : 540px */
 
-    width: 380px;
-    height: 540px;
 
     transform-style: preserve-3d;
 
