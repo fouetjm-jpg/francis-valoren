@@ -388,7 +388,7 @@ nav a:hover {
     width: 260px;
     height: 20px;
     margin: 40px auto;
-    background: #4a3a22;
+   background: #c8a878;
     border-radius: 10px;
     animation: branch-sway 4s ease-in-out infinite;
     transform-origin: left center;
