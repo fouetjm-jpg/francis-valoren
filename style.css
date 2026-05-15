@@ -428,3 +428,21 @@ header, .logo {
     font-size: 1.2em;
     color: #eaeaea;
 }
+/* 🔙 Bouton retour vers la Bibliothèque */
+.btn-retour {
+    display: inline-block;
+    margin: 140px 0 40px 80px;
+    padding: 12px 25px;
+    border: 1px solid #c79c52;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    border-radius: 6px;
+}
+
+.btn-retour:hover {
+    background: #c79c52;
+    color: #111;
+}
