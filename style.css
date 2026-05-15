@@ -7,8 +7,10 @@
 
 /* BODY */
 body {
-    overflow: hidden; /* empêche le scroll vertical */
+    overflow-y: auto; /* scroll vertical autorisé */
+    overflow-x: hidden; /* pas de scroll horizontal */
 }
+
 
 body {
     font-family: 'Cormorant Garamond', serif;
