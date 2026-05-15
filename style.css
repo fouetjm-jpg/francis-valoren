@@ -436,6 +436,25 @@ header, .logo {
 }
 
 /* Pages animées */
+/* ========================= */
+/* 📖 LIVRE ANIMÉ — PAGES QUI TOURNENT */
+/* ========================= */
+
+.book-container {
+    perspective: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    transform-style: preserve-3d;
+}
+
+/* Pages animées */
 .page {
     position: absolute;
     width: 100%;
@@ -454,3 +473,4 @@ header, .logo {
     padding: 20px;
     transition: transform 1.5s ease-in-out;
 }
+
