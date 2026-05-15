@@ -380,47 +380,62 @@ nav a:hover {
     box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 /* ========================= */
-/* 🌿 Branche animée */
+/* 🌿 Grande branche réaliste */
 /* ========================= */
 
-.branch {
+.big-branch {
     position: relative;
-    width: 260px;
-    height: 20px;
-    margin: 40px auto;
-   background: #c8a878;
-    border-radius: 10px;
-    animation: branch-sway 4s ease-in-out infinite;
+    width: 420px;
+    height: 30px;
+    margin: 50px auto;
+    background: linear-gradient(90deg, #7a5a3a, #5c432c);
+    border-radius: 20px;
+    animation: sway-branch 5s ease-in-out infinite;
     transform-origin: left center;
 }
 
-/* Feuilles */
-.leaf {
+/* Petites ramifications */
+.twig {
     position: absolute;
-    width: 40px;
-    height: 20px;
-    background: linear-gradient(135deg, #a5d6a7, #7cbf80);
-    border-radius: 20px 20px 0 20px;
+    width: 120px;
+    height: 12px;
+    background: linear-gradient(90deg, #7a5a3a, #5c432c);
+    border-radius: 10px;
     transform-origin: left center;
-    animation: leaf-sway 4s ease-in-out infinite;
+}
+
+.t1 { left: 80px; top: -8px; transform: rotate(-18deg); }
+.t2 { left: 160px; top: 10px; transform: rotate(12deg); }
+.t3 { left: 260px; top: -6px; transform: rotate(-10deg); }
+
+/* Feuilles réalistes */
+.leaf2 {
+    position: absolute;
+    width: 55px;
+    height: 28px;
+    background: linear-gradient(135deg, #9ed39c, #6fbf73);
+    border-radius: 40px 40px 0 40px;
+    transform-origin: left center;
+    animation: sway-leaf 5s ease-in-out infinite;
 }
 
 /* Position des feuilles */
-.l1 { left: 40px; top: -10px; transform: rotate(-20deg); }
-.l2 { left: 90px; top: 10px; transform: rotate(10deg); }
-.l3 { left: 150px; top: -12px; transform: rotate(-15deg); }
-.l4 { left: 210px; top: 8px; transform: rotate(15deg); }
+.lf1 { left: 90px; top: -25px; transform: rotate(-25deg); }
+.lf2 { left: 150px; top: 20px; transform: rotate(15deg); }
+.lf3 { left: 210px; top: -30px; transform: rotate(-18deg); }
+.lf4 { left: 280px; top: 15px; transform: rotate(12deg); }
+.lf5 { left: 340px; top: -22px; transform: rotate(-20deg); }
 
-/* Animation de la branche */
-@keyframes branch-sway {
+/* Animation plus naturelle */
+@keyframes sway-branch {
     0%   { transform: rotate(0deg); }
-    50%  { transform: rotate(3deg); }
+    50%  { transform: rotate(2.5deg); }
     100% { transform: rotate(0deg); }
 }
 
-/* Animation des feuilles */
-@keyframes leaf-sway {
+@keyframes sway-leaf {
     0%   { transform: rotate(0deg) scale(1); }
-    50%  { transform: rotate(6deg) scale(1.05); }
+    50%  { transform: rotate(8deg) scale(1.08); }
     100% { transform: rotate(0deg) scale(1); }
 }
+
