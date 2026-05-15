@@ -11,9 +11,10 @@
 body {
     font-family: 'Cormorant Garamond', serif;
 
-    background:
-        radial-gradient(circle at center, rgba(180,140,80,0.12), transparent 60%),
-        linear-gradient(to right, #050505, #111);
+ background:
+    radial-gradient(circle at center, rgba(180,140,80,0.20), transparent 60%),
+    linear-gradient(to right, #1a1a1a, #2a2a2a);
+
 
     color: #f5f1e8;
 
