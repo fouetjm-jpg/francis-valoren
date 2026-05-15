@@ -53,33 +53,34 @@
 
         </div>
 
-        <!-- LIVRE ANIMÉ -->
+        <!-- LIVRE FIXE (version d’origine) -->
         <div class="book-scene">
-            <div class="book-container">
-                <div class="book">
 
-                    <div class="page" data-title="Les Effaceurs – Tome 1"></div>
-                    <div class="page" data-title="Les Effaceurs – Tome 2"></div>
-                    <div class="page" data-title="Les Oubliés de la Terre"></div>
-                    <div class="page" data-title="Le Dernier Souffle"></div>
+            <div class="book">
 
+                <div class="cover">
+                    <div class="book-title">
+                        LE JARDIN<br>
+                        DU PREMIER<br>
+                        SOUFFLE
+                    </div>
+
+                    <div class="author">
+                        Francis Valoren
+                    </div>
                 </div>
+
+                <!-- Pages -->
+                <div class="page p1"></div>
+                <div class="page p2"></div>
+                <div class="page p3"></div>
+                <div class="page p4"></div>
+
             </div>
+
         </div>
 
     </section>
-
-    <!-- SCRIPT ANIMATION DES PAGES -->
-    <script>
-    const pages = document.querySelectorAll('.page');
-
-    pages.forEach((page, index) => {
-        setTimeout(() => {
-            page.style.transform = "rotateY(-180deg)";
-            page.innerHTML = `<div>${page.dataset.title}</div>`;
-        }, index * 2000);
-    });
-    </script>
 
 </body>
 
