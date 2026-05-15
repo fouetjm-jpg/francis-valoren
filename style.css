@@ -248,10 +248,10 @@ nav a:hover {
 /* PAGES */
 
 .page {
-    position: absolute;
-
     width: 96%;
     height: 96%;
+}
+
 
     background:
         linear-gradient(to right,
