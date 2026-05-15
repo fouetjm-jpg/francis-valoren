@@ -1,5 +1,4 @@
 /* RESET */
-
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +6,9 @@
 }
 
 /* BODY */
+body {
+    overflow: hidden; /* empêche le scroll vertical */
+}
 
 body {
     font-family: 'Cormorant Garamond', serif;
@@ -23,41 +25,31 @@ body {
 }
 
 /* OVERLAY */
-
 .background-overlay {
     position: fixed;
     inset: 0;
-
     background:
         linear-gradient(to right,
             rgba(0,0,0,0.20) 20%,
             rgba(0,0,0,0.10) 55%,
             rgba(0,0,0,0.02) 100%);
-
     z-index: -1;
 }
 
 /* HEADER */
-
 header {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 30px 60px;
-
     z-index: 1000;
 }
 
 /* LOGO */
-
 .logo {
     font-size: 2em;
     color: #d6b16d;
@@ -71,7 +63,6 @@ header {
 }
 
 /* NAV */
-
 nav {
     display: flex;
     gap: 35px;
@@ -80,9 +71,7 @@ nav {
 nav a {
     color: #f2f2f2;
     text-decoration: none;
-
     font-size: 1.2em;
-
     transition: 0.3s;
 }
 
@@ -91,19 +80,15 @@ nav a:hover {
 }
 
 /* HERO */
-
 .hero {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 140px 80px;
 }
 
 /* TEXTE */
-
 .hero-text {
     width: 40%;
     z-index: 2;
@@ -112,54 +97,40 @@ nav a:hover {
 .hero-text h1 {
     font-size: 6em;
     line-height: 0.9;
-
     font-weight: 300;
 }
 
 .line {
     width: 80px;
     height: 2px;
-
     background: #c79c52;
-
     margin: 40px 0;
 }
 
 .hero-text h2 {
     color: #d6b16d;
-
     font-size: 2em;
     font-style: italic;
-
     margin-bottom: 25px;
 }
 
 .hero-text p {
     font-size: 1.5em;
     line-height: 1.5;
-
     max-width: 500px;
-
     color: #ddd;
 }
 
 /* BOUTON */
-
 .btn {
     display: inline-block;
-
     margin-top: 40px;
-
     border: 1px solid #c79c52;
-
     padding: 18px 35px;
-
     color: #fff;
     text-decoration: none;
-
     font-size: 1.1em;
     letter-spacing: 1px;
-
     transition: 0.4s;
 }
 
@@ -168,141 +139,87 @@ nav a:hover {
     color: #111;
 }
 
-/* LIVRE */
+/* ========================= */
+/* 📖 LIVRE FIXE — VERSION ORIGINALE */
+/* ========================= */
 
+/* LIVRE */
 .book-scene {
     width: 50%;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     perspective: 2500px;
 }
 
 /* STRUCTURE LIVRE */
-
 .book {
     position: relative;
     width: 280px;
     height: 400px;
-
     transform-style: preserve-3d;
-
     transform:
         rotateY(-28deg)
         rotateX(12deg)
         rotateZ(-6deg);
-
     animation: floating 6s ease-in-out infinite;
 }
 
 /* COUVERTURE */
-
 .cover {
     position: absolute;
-
     inset: 0;
-
-    background:
-        linear-gradient(145deg,
-            #f5ead6,
-            #c7b08b);
-
+    background: linear-gradient(145deg, #f5ead6, #c7b08b);
     border-radius: 8px;
-
     box-shadow:
         -40px 40px 70px rgba(0,0,0,0.7),
         inset 0 0 25px rgba(255,255,255,0.15);
-
     z-index: 10;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
 }
 
 /* TITRE LIVRE */
-
 .book-title {
     font-size: 3em;
     color: #2f2418;
-
     line-height: 1.2;
 }
 
 /* AUTEUR */
-
 .author {
     margin-top: 60px;
-
     font-size: 1.5em;
-
     color: #4d3a28;
 }
 
-/* PAGES */
-
+/* PAGES FIXES */
 .page {
     position: absolute;
-
     width: 96%;
     height: 96%;
-
-    background:
-        linear-gradient(to right,
-            #fffdf8,
-            #e9dcc7);
-
+    background: linear-gradient(to right, #fffdf8, #e9dcc7);
     right: -8px;
     top: 8px;
-
     border-radius: 4px;
-
-    box-shadow:
-        0 0 25px rgba(0,0,0,0.25);
-
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
     opacity: 0.9;
 }
 
 /* Décalage pages */
-
 .p1 { transform: translateZ(-5px) translateX(8px) rotateY(2deg); }
 .p2 { transform: translateZ(-10px) translateX(16px) rotateY(3deg); }
 .p3 { transform: translateZ(-15px) translateX(24px) rotateY(4deg); }
 .p4 { transform: translateZ(-20px) translateX(32px) rotateY(5deg); }
 
-/* ANIMATION */
-
+/* ANIMATION FLOTTANTE */
 @keyframes floating {
     0% { transform: rotateY(-28deg) rotateX(12deg) rotateZ(-6deg) translateY(0px); }
     50% { transform: rotateY(-28deg) rotateX(12deg) rotateZ(-6deg) translateY(-12px); }
     100% { transform: rotateY(-28deg) rotateX(12deg) rotateZ(-6deg) translateY(0px); }
-}
-
-/* RESPONSIVE (tablettes) */
-
-@media(max-width: 1000px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text {
-        width: 100%;
-    }
-
-    .book-scene {
-        width: 100%;
-        margin-top: 80px;
-    }
-
-    .hero-text h1 {
-        font-size: 4em;
-    }
 }
 
 /* ========================= */
@@ -340,13 +257,12 @@ nav a:hover {
 }
 
 /* ⭐ CORRECTION LOGO QUI DISPARAÎT ⭐ */
-
 header, .logo {
     position: relative;
     z-index: 9999 !important;
 }
 
-/* 📱 OPTIMISATION MOBILE */
+/* 📱 RESPONSIVE MOBILE */
 @media(max-width: 768px) {
 
     header {
@@ -416,60 +332,4 @@ header, .logo {
         font-size: 1.1em;
         margin-top: 30px;
     }
-}
-/* ========================= */
-/* 📖 LIVRE ANIMÉ — PAGES QUI TOURNENT */
-/* ========================= */
-
-.book-container {
-    perspective: 2000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.book {
-    position: relative;
-    width: 280px;
-    height: 400px;
-    transform-style: preserve-3d;
-}
-
-/* Pages animées */
-/* ========================= */
-/* 📖 LIVRE ANIMÉ — PAGES QUI TOURNENT */
-/* ========================= */
-
-.book-container {
-    perspective: 2000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.book {
-    position: relative;
-    width: 280px;
-    height: 400px;
-    transform-style: preserve-3d;
-}
-
-/* Pages animées */
-.page {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #fffdf8, #e9dcc7);
-    border-radius: 6px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    transform-origin: left;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4em;
-    color: #3a2a1a;
-    padding: 20px;
-    transition: transform 1.5s ease-in-out;
 }
