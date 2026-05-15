@@ -30,12 +30,13 @@ body {
 
     background:
         linear-gradient(to right,
-            rgba(0,0,0,0.92) 20%,
-            rgba(0,0,0,0.55) 55%,
-            rgba(0,0,0,0.15) 100%);
+            rgba(0,0,0,0.65) 20%,
+            rgba(0,0,0,0.35) 55%,
+            rgba(0,0,0,0.10) 100%);
 
     z-index: -1;
 }
+
 
 /* HEADER */
 
