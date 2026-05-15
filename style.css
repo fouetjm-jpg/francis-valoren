@@ -380,62 +380,65 @@ nav a:hover {
     box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 /* ========================= */
-/* 🌿 Grande branche réaliste */
+/* 🌿 Branche réaliste XL */
 /* ========================= */
 
-.big-branch {
+.real-branch {
     position: relative;
-    width: 420px;
-    height: 30px;
-    margin: 50px auto;
-    background: linear-gradient(90deg, #7a5a3a, #5c432c);
-    border-radius: 20px;
-    animation: sway-branch 5s ease-in-out infinite;
+    width: 600px;
+    height: 40px;
+    margin: 60px auto;
+    background: linear-gradient(90deg, #8b6f47, #6d5336, #5a432c);
+    border-radius: 25px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+    animation: rb-sway 6s ease-in-out infinite;
     transform-origin: left center;
 }
 
-/* Petites ramifications */
-.twig {
+/* Ramifications */
+.subbranch {
     position: absolute;
-    width: 120px;
-    height: 12px;
-    background: linear-gradient(90deg, #7a5a3a, #5c432c);
-    border-radius: 10px;
+    width: 180px;
+    height: 18px;
+    background: linear-gradient(90deg, #8b6f47, #6d5336);
+    border-radius: 18px;
     transform-origin: left center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.t1 { left: 80px; top: -8px; transform: rotate(-18deg); }
-.t2 { left: 160px; top: 10px; transform: rotate(12deg); }
-.t3 { left: 260px; top: -6px; transform: rotate(-10deg); }
+.sb1 { left: 120px; top: -12px; transform: rotate(-22deg); }
+.sb2 { left: 260px; top: 18px; transform: rotate(15deg); }
+.sb3 { left: 400px; top: -10px; transform: rotate(-18deg); }
 
 /* Feuilles réalistes */
-.leaf2 {
+.leafR {
     position: absolute;
-    width: 55px;
-    height: 28px;
-    background: linear-gradient(135deg, #9ed39c, #6fbf73);
-    border-radius: 40px 40px 0 40px;
+    width: 70px;
+    height: 35px;
+    background: linear-gradient(135deg, #a8d8a0, #6fbf73);
+    border-radius: 50px 50px 0 50px;
     transform-origin: left center;
-    animation: sway-leaf 5s ease-in-out infinite;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    animation: leafR-sway 6s ease-in-out infinite;
 }
 
-/* Position des feuilles */
-.lf1 { left: 90px; top: -25px; transform: rotate(-25deg); }
-.lf2 { left: 150px; top: 20px; transform: rotate(15deg); }
-.lf3 { left: 210px; top: -30px; transform: rotate(-18deg); }
-.lf4 { left: 280px; top: 15px; transform: rotate(12deg); }
-.lf5 { left: 340px; top: -22px; transform: rotate(-20deg); }
+/* Positions des feuilles */
+.lf1 { left: 140px; top: -40px; transform: rotate(-28deg); }
+.lf2 { left: 200px; top: 25px; transform: rotate(18deg); }
+.lf3 { left: 260px; top: -45px; transform: rotate(-20deg); }
+.lf4 { left: 330px; top: 20px; transform: rotate(15deg); }
+.lf5 { left: 420px; top: -38px; transform: rotate(-22deg); }
+.lf6 { left: 500px; top: 18px; transform: rotate(12deg); }
 
-/* Animation plus naturelle */
-@keyframes sway-branch {
+/* Animations */
+@keyframes rb-sway {
     0%   { transform: rotate(0deg); }
-    50%  { transform: rotate(2.5deg); }
+    50%  { transform: rotate(3deg); }
     100% { transform: rotate(0deg); }
 }
 
-@keyframes sway-leaf {
+@keyframes leafR-sway {
     0%   { transform: rotate(0deg) scale(1); }
-    50%  { transform: rotate(8deg) scale(1.08); }
+    50%  { transform: rotate(10deg) scale(1.12); }
     100% { transform: rotate(0deg) scale(1); }
 }
-
