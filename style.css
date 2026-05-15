@@ -11,10 +11,9 @@
 body {
     font-family: 'Cormorant Garamond', serif;
 
- background:
-    radial-gradient(circle at center, rgba(180,140,80,0.20), transparent 60%),
- linear-gradient(to right, #2e2e2e, #3a3a3a);
-
+    background:
+        radial-gradient(circle at center, rgba(180,140,80,0.25), transparent 60%),
+        linear-gradient(to right, #3a3a3a, #4a4a4a);
 
     color: #f5f1e8;
 
@@ -31,15 +30,12 @@ body {
 
     background:
         linear-gradient(to right,
-            rgba(0,0,0,0.45) 20%,
-            rgba(0,0,0,0.25) 55%,
-            rgba(0,0,0,0.05) 100%);
+            rgba(0,0,0,0.20) 20%,
+            rgba(0,0,0,0.10) 55%,
+            rgba(0,0,0,0.02) 100%);
 
-    z-index: -1; /* ou 0 si tu veux, mais PAS dans un bloc imbriqué */
+    z-index: -1;
 }
-
-
-
 
 /* HEADER */
 
@@ -188,8 +184,8 @@ nav a:hover {
 
 .book {
     position: relative;
-    width: 280px;   /* réduit */
-    height: 400px;  /* réduit */
+    width: 280px;
+    height: 400px;
 
     transform-style: preserve-3d;
 
@@ -353,7 +349,6 @@ header, .logo {
 /* 📱 OPTIMISATION MOBILE */
 @media(max-width: 768px) {
 
-    /* HEADER */
     header {
         padding: 20px 25px;
     }
@@ -371,7 +366,6 @@ header, .logo {
         font-size: 1em;
     }
 
-    /* HERO */
     .hero {
         flex-direction: column;
         justify-content: flex-start;
@@ -398,13 +392,11 @@ header, .logo {
         max-width: 100%;
     }
 
-    /* BOUTON */
     .btn {
         padding: 14px 28px;
         font-size: 1em;
     }
 
-    /* LIVRE */
     .book-scene {
         width: 100%;
         margin-top: 20px;
