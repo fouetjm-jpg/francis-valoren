@@ -328,3 +328,19 @@ header, .logo {
     width: 100%;
     margin-top: 160px; /* pour compenser le header fixe */
 }
+/* SECTION BIBLIOTHÈQUE CENTRÉE */
+.bibliotheque-section {
+    text-align: center;
+    width: 100%;
+    margin-top: 180px; /* pour compenser le header fixe */
+}
+
+/* CONTENEUR DES LIVRES CENTRÉ AU MILIEU */
+.books-container {
+    display: flex;
+    justify-content: center;   /* ⭐ centre horizontalement ⭐ */
+    align-items: center;       /* ⭐ centre verticalement si hauteur définie ⭐ */
+    gap: 60px;                 /* espace entre les livres */
+    width: 100%;
+    margin-top: 60px;
+}
