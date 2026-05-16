@@ -40,7 +40,7 @@ header {
     left: 0;
     width: 100%;
     display: flex;
-justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
     padding: 30px 60px;
     z-index: 1000;
@@ -89,8 +89,6 @@ nav a:hover {
 .hero-text {
     width: 40%;
     z-index: 2;
-
-    /* ⭐ CORRECTION POUR DÉPLACER LE BOUTON ⭐ */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -322,25 +320,27 @@ header, .logo {
         margin-top: 30px;
     }
 }
+
 /* SECTION CONTACT CENTRÉE */
 .contact-section {
     text-align: center;
     width: 100%;
-    margin-top: 160px; /* pour compenser le header fixe */
+    margin-top: 160px;
 }
+
 /* SECTION BIBLIOTHÈQUE CENTRÉE */
 .bibliotheque-section {
     text-align: center;
     width: 100%;
-    margin-top: 180px; /* pour compenser le header fixe */
+    margin-top: 180px;
 }
 
 /* CONTENEUR DES LIVRES CENTRÉ AU MILIEU */
 .books-container {
     display: flex;
-    justify-content: center;   /* ⭐ centre horizontalement ⭐ */
-    align-items: center;       /* ⭐ centre verticalement si hauteur définie ⭐ */
-    gap: 60px;                 /* espace entre les livres */
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
     width: 100%;
     margin-top: 60px;
 }
