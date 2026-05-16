@@ -344,3 +344,40 @@ header, .logo {
     width: 100%;
     margin-top: 60px;
 }
+/* STYLE DES CARTES DE LIVRES */
+.book-card {
+    width: 280px;
+    text-align: center;
+    background: rgba(255,255,255,0.03);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+    backdrop-filter: blur(4px);
+    transition: 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 35px rgba(0,0,0,0.35);
+}
+
+/* IMAGE DU LIVRE */
+.book-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* TITRE DU LIVRE */
+.book-card h2 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #f5f1e8;
+}
+
+/* SOUS-TITRE */
+.book-card .subtitle {
+    font-size: 1.1em;
+    color: #d6b16d;
+    margin-bottom: 20px;
+}
