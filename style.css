@@ -85,25 +85,6 @@ nav a:hover {
     padding: 140px 80px;
 }
 
-/* CONTAINER UTILISÉ DANS LA PAGE BIOGRAPHIE */
-.hero-inner {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 50px;
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.bio-photo img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.5);
-    max-width: 350px;
-}
-
 /* TEXTE */
 .hero-text {
     width: 40%;
@@ -292,11 +273,6 @@ header, .logo {
         justify-content: flex-start;
         padding: 120px 25px 60px 25px;
         text-align: center;
-    }
-
-    .hero-inner {
-        flex-direction: column;
-        align-items: center;
     }
 
     .hero-text {
