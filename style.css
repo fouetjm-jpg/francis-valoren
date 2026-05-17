@@ -85,6 +85,98 @@ nav a:hover {
     padding: 140px 80px;
 }
 
+.sorties-list {
+    display: grid;
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sortie-row {
+    display: grid;
+    gap: 20px;
+    width: min(90vw, 760px);
+    margin: 0 auto;
+    background: rgba(20,20,20,0.55);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.sortie-card {
+    display: grid;
+    gap: 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    padding: 24px;
+}
+
+.sortie-text {
+    display: grid;
+    gap: 20px;
+}
+
+.sortie-pitch {
+    color: #e8dfcf;
+    line-height: 1.8;
+    font-size: 1.05em;
+}
+
+.sortie-dropzone-wrapper {
+    display: grid;
+    gap: 12px;
+}
+
+.sortie-bubble {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 74px;
+    min-height: 42px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(215, 156, 82, 0.16);
+    color: #f5e9d1;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid rgba(215, 156, 82, 0.35);
+}
+
+.sortie-card h2 {
+    font-size: 1.65em;
+    line-height: 1.2;
+}
+
+.sortie-date {
+    color: #e4d7bf;
+    font-size: 1.05em;
+}
+
+.sortie-dropzone {
+    min-height: 120px;
+    border: 2px dashed rgba(215, 156, 82, 0.5);
+    border-radius: 18px;
+    padding: 22px;
+    color: #e9dcc9;
+    background: rgba(255,255,255,0.04);
+    transition: border-color 0.3s ease, background 0.3s ease;
+    outline: none;
+}
+
+.sortie-dropzone:focus {
+    border-color: rgba(215, 156, 82, 0.85);
+    background: rgba(215, 156, 82, 0.08);
+}
+
+.sortie-dropzone:empty:before {
+    content: attr(aria-label);
+    color: rgba(229, 214, 183, 0.7);
+}
+
 /* CONTAINER UTILISÉ DANS LA PAGE BIOGRAPHIE */
 .hero-inner {
     display: flex;
