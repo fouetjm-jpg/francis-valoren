@@ -17,7 +17,7 @@
 
     <!-- HEADER -->
     <header>
-        <div class="logo">Francis Valoren <span>Auteur</span></div>
+        <div class="logo">FV</div>
 
         <nav>
             <a href="prochaines-sorties.html">Prochaines-Sorties</a>
@@ -26,44 +26,134 @@
         </nav>
     </header>
 
-    <!-- GLOBE -->
-    <div class="globe-container">
-        <div class="globe"></div>
-    </div>
-
     <!-- CONTENU -->
     <section class="contact-section">
 
-        <h1>Contact</h1>
+        <div class="contact-left">
 
-        <div class="line"></div>
+            <h1 style="font-size:4em;">Contact</h1>
 
-        <p>Retrouvez-moi sur mes réseaux ou contactez-moi directement.</p>
+            <div class="line"></div>
 
-        <div class="contact-links">
+            <p>Retrouvez-moi sur mes réseaux ou contactez-moi directement.</p>
 
-            <!-- EMAIL -->
-            <a class="contact-button" href="mailto:francisvaloren@yahoo.com">
-                📧 Me contacter par email
-            </a>
+            <div class="contact-links">
 
-            <!-- TIKTOK -->
-            <a class="contact-button" 
-               href="https://www.tiktok.com/@francis.valoren" 
-               target="_blank">
-                🎵 Mon TikTok
-            </a>
+                <!-- EMAIL -->
+                <a class="contact-button" href="mailto:francisvaloren@yahoo.com">
+                    📧 Me contacter par email
+                </a>
 
-            <!-- INSTAGRAM -->
-            <a class="contact-button" 
-               href="https://www.instagram.com/francis.valoren/" 
-               target="_blank">
-                📸 Mon Instagram
-            </a>
+                <!-- TIKTOK -->
+                <a class="contact-button"
+                   href="https://www.tiktok.com/@francis.valoren"
+                   target="_blank">
+                    🎵 Mon TikTok
+                </a>
 
+                <!-- INSTAGRAM -->
+                <a class="contact-button"
+                   href="https://www.instagram.com/francis.valoren/"
+                   target="_blank">
+                    📸 Mon Instagram
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- GLOBE -->
+        <div class="contact-globe">
+            <div class="globe-wrap">
+                <canvas id="globe-canvas" width="280" height="280"></canvas>
+            </div>
         </div>
 
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson@3/dist/topojson.min.js"></script>
+    <script>
+        const canvas = document.getElementById('globe-canvas');
+        const ctx = canvas.getContext('2d');
+        const W = 280, H = 280;
+
+        const projection = d3.geoOrthographic()
+            .scale(132)
+            .translate([W / 2, H / 2])
+            .clipAngle(90)
+            .rotate([0, -20]);
+
+        const path = d3.geoPath(projection, ctx);
+        const graticule = d3.geoGraticule()();
+        const sphere = { type: 'Sphere' };
+
+        d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(world => {
+            const land    = topojson.feature(world, world.objects.land);
+            const borders = topojson.mesh(world, world.objects.countries, (a, b) => a !== b);
+
+            let rot = 0;
+
+            function draw() {
+                projection.rotate([rot, -20]);
+                ctx.clearRect(0, 0, W, H);
+
+                /* Océan */
+                ctx.beginPath();
+                path(sphere);
+                const ocean = ctx.createRadialGradient(W * 0.38, H * 0.3, 8, W / 2, H / 2, 135);
+                ocean.addColorStop(0,    '#5ab0e0');
+                ocean.addColorStop(0.5,  '#1565a8');
+                ocean.addColorStop(1,    '#082040');
+                ctx.fillStyle = ocean;
+                ctx.fill();
+
+                /* Graticule */
+                ctx.beginPath();
+                path(graticule);
+                ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+
+                /* Terres */
+                ctx.beginPath();
+                path(land);
+                const landGrad = ctx.createLinearGradient(0, 0, 0, H);
+                landGrad.addColorStop(0, '#6ab870');
+                landGrad.addColorStop(1, '#2d6b30');
+                ctx.fillStyle = landGrad;
+                ctx.fill();
+
+                /* Frontières */
+                ctx.beginPath();
+                path(borders);
+                ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+                ctx.lineWidth = 0.4;
+                ctx.stroke();
+
+                /* Contour sphère */
+                ctx.beginPath();
+                path(sphere);
+                ctx.strokeStyle = 'rgba(120,190,255,0.35)';
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+
+                /* Reflet lumineux */
+                ctx.beginPath();
+                path(sphere);
+                const shine = ctx.createRadialGradient(W * 0.32, H * 0.26, 0, W * 0.38, H * 0.36, 125);
+                shine.addColorStop(0,    'rgba(255,255,255,0.25)');
+                shine.addColorStop(0.3,  'rgba(255,255,255,0.07)');
+                shine.addColorStop(1,    'rgba(0,0,0,0)');
+                ctx.fillStyle = shine;
+                ctx.fill();
+
+                rot += 0.12;
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+        });
+    </script>
 </body>
 </html>
