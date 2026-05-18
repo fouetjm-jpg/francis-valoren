@@ -44,7 +44,29 @@
                 <div class="sortie-card">
                     <div class="sortie-bubble">SORTIE 1</div>
                     <h2>🌿 Les Réfugiées</h2>
-                    <p class="sortie-date">Date prévue : <strong>Automne 2026</strong></p>
+                    <p class="sortie-date">Date prévue : <strong>22 Septembre 2026 - Début de l'Automne 2026</strong></p>
+
+                    <div class="countdown">
+                        <div class="countdown-bloc">
+                            <span id="cd-jours">--</span>
+                            <small>jours</small>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-bloc">
+                            <span id="cd-heures">--</span>
+                            <small>heures</small>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-bloc">
+                            <span id="cd-minutes">--</span>
+                            <small>minutes</small>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-bloc">
+                            <span id="cd-secondes">--</span>
+                            <small>secondes</small>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="sortie-text">
@@ -65,7 +87,29 @@
                 <div class="sortie-card">
                     <div class="sortie-bubble">SORTIE 2</div>
                     <h2>🕯️Derrière un Speudo</h2>
-                    <p class="sortie-date">Date prévue : <strong>Début 2027</strong></p>
+                    <p class="sortie-date">Date prévue : <strong>15 janvier 2027</strong></p>
+
+                    <div class="countdown">
+                        <div class="countdown-bloc">
+                            <span id="cd2-jours">--</span>
+                            <small>jours</small>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-bloc">
+                            <span id="cd2-heures">--</span>
+                            <small>heures</small>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-bloc">
+                            <span id="cd2-minutes">--</span>
+                            <small>minutes</small>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-bloc">
+                            <span id="cd2-secondes">--</span>
+                            <small>secondes</small>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="sortie-text">
@@ -103,6 +147,58 @@
         </div>
 
     </section>
+
+    <script>
+        const cible = new Date('2026-09-22T00:00:00');
+
+        function majCompteur() {
+            const maintenant = new Date();
+            const diff = cible - maintenant;
+
+            if (diff <= 0) {
+                document.querySelector('.countdown').innerHTML = '<p style="color:#d6b16d;font-size:1.1em;">C\'est sorti !</p>';
+                return;
+            }
+
+            const jours    = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const heures   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secondes = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('cd-jours').textContent    = String(jours).padStart(2, '0');
+            document.getElementById('cd-heures').textContent   = String(heures).padStart(2, '0');
+            document.getElementById('cd-minutes').textContent  = String(minutes).padStart(2, '0');
+            document.getElementById('cd-secondes').textContent = String(secondes).padStart(2, '0');
+        }
+
+        majCompteur();
+        setInterval(majCompteur, 1000);
+
+        const cible2 = new Date('2027-01-15T00:00:00');
+
+        function majCompteur2() {
+            const maintenant = new Date();
+            const diff = cible2 - maintenant;
+
+            if (diff <= 0) {
+                document.querySelectorAll('.countdown')[1].innerHTML = '<p style="color:#d6b16d;font-size:1.1em;">C\'est sorti !</p>';
+                return;
+            }
+
+            const jours    = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const heures   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secondes = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('cd2-jours').textContent    = String(jours).padStart(2, '0');
+            document.getElementById('cd2-heures').textContent   = String(heures).padStart(2, '0');
+            document.getElementById('cd2-minutes').textContent  = String(minutes).padStart(2, '0');
+            document.getElementById('cd2-secondes').textContent = String(secondes).padStart(2, '0');
+        }
+
+        majCompteur2();
+        setInterval(majCompteur2, 1000);
+    </script>
 
 </body>
 </html>
